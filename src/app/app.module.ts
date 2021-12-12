@@ -9,11 +9,14 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
+import { PagesListComponent } from './pages-list/pages-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,    
+    AppComponent,
+    PagesListComponent
+    
   ],
   imports: [
     BrowserModule,
