@@ -1,5 +1,11 @@
-<ul>
-    
+<div style='text-align:center'>
+    <h1>
+      Welcome
+    </h1>
+    <img img width="250" alt="Angular Logo"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
+  </div>
+  <ul>
     <div *ngFor="let page of pagesObservable | async">
         <h3>{{page.title}}</h3>
         <p>{{page.description}}</p>
@@ -8,3 +14,4 @@
     </div>
 
 </ul>
+

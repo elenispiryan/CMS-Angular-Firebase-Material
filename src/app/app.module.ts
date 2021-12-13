@@ -10,21 +10,27 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
 import { PagesListComponent } from './pages-list/pages-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AppRoutingModule } from './app-routing-module';
+import { AfService } from './providers/af.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagesListComponent
-    
+    PagesListComponent,
+    LoginPageComponent,
+       
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
   ],
+  providers: [AfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
