@@ -11,7 +11,7 @@ import { PagesListComponent } from "./pages-list/pages-list.component";
 const routes: Routes = [
     { path: '', component: HomePageComponent } ,
     { path: 'login', component: LoginPageComponent },
-    { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
+    { path: 'admin', loadChildren: () => import('../app/admin-page/admin-page.module').then(x=>x.AdminPageModule) , canActivate: [AdminGuard], },
     { path: 'article', component: PagesListComponent, canActivate: [SubscriberGuard] }
 ];
 
