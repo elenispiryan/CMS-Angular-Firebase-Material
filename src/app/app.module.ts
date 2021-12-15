@@ -22,6 +22,7 @@ import { SubscriberGuard } from './guards/subscriber.guard';
 
 import { MaterialModule } from './material.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,8 @@ import { MaterialModule } from './material.module';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
   bootstrap: [AppComponent]
