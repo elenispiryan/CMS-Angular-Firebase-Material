@@ -18,15 +18,14 @@ export class MenusComponent implements OnInit {
   paginator!: MatPaginator;
   
 
-  dataSource = new MatTableDataSource();
+  dataSource!: MatTableDataSource<Menu>;
   displayedColumns: string[] = ['id', 'title', 'url'];
 
   
  
   menuDetails: Menu = {
     title: "",
-    url: "",
-    id: "",
+    url: ""
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -36,8 +35,10 @@ export class MenusComponent implements OnInit {
   constructor(private menus: MenusService) { }
 
   ngOnInit()  {
+    this.dataSource = new MatTableDataSource();
+
     this.menus.getMenus().subscribe((data:any)=>{
-    this.dataSource = data;
+      this.dataSource.data = data;
     })
   }
   

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { collectionChanges } from 'rxfire/firestore';
 
-export interface Menu {
+export interface Post {
 title: "",
 url: "",
 id?: "",
@@ -15,37 +15,37 @@ id?: "",
 @Injectable({
   providedIn: 'root'
 })
-export class MenusService {
-  docMenu= collection(this.afs, 'menus')
+export class PostsService {
+  docPost= collection(this.afs, 'posts')
   constructor(private afs: Firestore) { }
 
 
-  getMenus() {
-     return collectionSnapshots(this.docMenu).pipe(
-      map(menus => {
-        return menus.map(menu => {
+  getPosts() {
+     return collectionSnapshots(this.docPost).pipe(
+      map(posts => {
+        return posts.map(post => {
           
-          const  Data = menu.data();
-          const  id = menu.id;
+          const  Data = post.data();
+          const  id = post.id;
           return { id:id, ...Data};
-          console.log(menu.id)
+          console.log(post.id)
         });
       })
     );
   }
 
-addMenu(menu: Menu) {
+addPost(post: Post) {
 
-addDoc(this.docMenu, menu);
+addDoc(this.docPost, post);
 }
 
-deleteMenu(menuId: string) {
-  const docMenu = doc(this.afs, `menus/${menuId}`)
-  deleteDoc(docMenu);
+deletePost(postId: string) {
+  const docPost = doc(this.afs, `posts/${postId}`)
+  deleteDoc(docPost);
  }
 
-updateMenu(menuId: string, menu: Menu) {
-  const docMenu:any= doc(this.afs, `menus/${menuId}`)
-    updateDoc<Menu>(docMenu, menu);
+updatePost(postId: string, post: Post) {
+  const docPost:any= doc(this.afs, `posts/${postId}`)
+    updateDoc<Post>(docPost, post);
 }
 }
