@@ -5,7 +5,7 @@ import { FrontRoutingModule } from './front-routing.module';
 import { FrontPageComponent } from './front-page.component';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
-import { MaterialModule } from '../admin-page/material.module';
+import { MaterialModule } from '../material.module';
 import { PagesComponent } from './pages/pages.component';
 
 @NgModule({

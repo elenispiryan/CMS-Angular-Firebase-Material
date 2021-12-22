@@ -15,24 +15,22 @@ const routes: Routes = [
                 path: '',
                 component: HomePageComponent,
             },
-            {
-                path: 'home',
-                component: HomePageComponent,
-            },
+
         
             {
                 path: 'article', 
                 component: PagesListComponent,
             },
         
-            {
-                path: '**',
-                redirectTo: 'home',
-          },
+          
           {
             path: 'pages/:url',
             component: PagesComponent,
       },
+      {
+        path: '**',
+        redirectTo: 'home',
+  },
          
 
 ]

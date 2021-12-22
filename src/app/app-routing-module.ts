@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: 'home', loadChildren: () => import('../app/front-page/front-page.module').then(m => m.FrontPageModule)},
     { path: 'login', component: LoginPageComponent },
     { path: 'admin', loadChildren: () => import('../app/admin-page/admin-page.module').then(x=>x.AdminPageModule) , canActivate: [AdminGuard], },
+    { path: '**', redirectTo: 'home'}
    
 ];
 

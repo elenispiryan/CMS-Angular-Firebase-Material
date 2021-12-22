@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { provideFirestore, getFirestore, Firestore ,collection, doc, addDoc, deleteDoc,updateDoc,  collectionSnapshots  } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore, Firestore ,collection, doc, addDoc, deleteDoc,updateDoc, collectionSnapshots, query, where  } from '@angular/fire/firestore';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -28,11 +28,28 @@ export class MenusService {
           const  Data = menu.data();
           const  id = menu.id;
           return { id:id, ...Data};
-          console.log(menu.id)
+          
         });
       })
     );
   }
+
+
+  getConditionalMenus(field: string, condition?: any, value?: string) {
+    const condition_query = query(this.docMenu, where(field, condition, value))
+    return collectionSnapshots(condition_query).pipe(
+      map(menus => {
+        return menus.map(menu => {
+          const  Data = menu.data();
+          const  id = menu.id;
+                    return {
+            id: id,
+          }
+        })
+      })
+    )
+  }
+
 
 addMenu(menu: Menu) {
 
