@@ -24,7 +24,7 @@ export class PostsComponent implements OnInit {
   
 
   dataSource!: MatTableDataSource<Post>;
-  displayedColumns: string[] = ['id', 'title', 'menu_id', "content", 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'menu_id', 'content', 'actions'];
 
   
  
@@ -49,6 +49,11 @@ export class PostsComponent implements OnInit {
       menu_id: ["", Validators.required],
       content: ["", Validators.required],
   })}
+
+
+  deletePost(postId: string) {
+    this.posts.deletePost(postId);
+  }
 
   openDialog(postId: any): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -108,8 +113,6 @@ addPost() {
     this.posts.updatePost(postId, post);
   }
 
-  deletePost(postId: string) {
-    this.posts.deletePost(postId);
-  }
+
 
   }

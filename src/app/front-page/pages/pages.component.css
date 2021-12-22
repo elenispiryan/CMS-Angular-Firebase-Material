@@ -1,0 +1,15 @@
+.cards {
+    column-count: 3;
+    -webkit-column-count: 3;
+    column-gap: 1;
+    -webkit-column-gap: 1;
+    padding: 10px;
+}
+mat-card {
+    display: inline-block;
+    position: static;
+    margin: 10px;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    width: 90%;
+}

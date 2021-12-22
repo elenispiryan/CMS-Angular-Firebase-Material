@@ -11,7 +11,6 @@ url: "",
 id?: "",
 };
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +43,7 @@ export class MenusService {
           const  id = menu.id;
                     return {
             id: id,
+            ...Data,
           }
         })
       })

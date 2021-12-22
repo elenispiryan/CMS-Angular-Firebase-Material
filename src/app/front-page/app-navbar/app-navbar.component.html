@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-button routerLink="/">Angular CMS</button>
+        <button mat-button routerLink="/">JS Tech Blog</button>
       <span class="example-spacer"></span>
 
       <div *ngFor="let menus of menusList">
-        <button mat-button routerLink="/home/pages/{{ menus.title }}">{{ menus.title }}</button>
+        <button mat-button routerLink="/home/pages/{{ menus.url }}">{{ menus.title }}</button>
     </div>
               
-        <button mat-button routerLink="/home/article">Article Page</button>
+        <button mat-button routerLink="/home/article">Pro Blog</button>
        
     <div *ngIf="! user">
         <button mat-button (click)="AfService.loginWithGoogle()">Login Page</button>
@@ -32,10 +32,6 @@
               <span>Log out</span>
             </button>
           </mat-menu>
-
-
-       
-        
     </div>
     </mat-toolbar-row>
   
