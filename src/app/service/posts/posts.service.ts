@@ -7,8 +7,8 @@ import { collectionChanges } from 'rxfire/firestore';
 
 export interface Post {
 title: "",
-url: "",
-id?: "",
+menu_id: "",
+content: "",
 };
 
 

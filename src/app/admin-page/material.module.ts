@@ -12,7 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -33,7 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatInputModule,
         MatSortModule,
         MatPaginatorModule,
-        MatDialogModule
+        MatDialogModule,
+        MatSelectModule
     ],
     exports: [
         MatButtonModule,
@@ -47,7 +48,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatInputModule,
         MatSortModule,
         MatPaginatorModule,
-        MatDialogModule
+        MatDialogModule,
+        MatSelectModule
     ],
    
   })
