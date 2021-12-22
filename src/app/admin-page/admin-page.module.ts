@@ -4,7 +4,7 @@ import { MaterialModule } from './material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminPageComponent } from "./admin-page.component";
-import { AppNavbarComponent } from '../front-page/app-navbar/app-navbar.component';
+import { AppNavbarComponent } from '../admin-page/app-navbar/app-navbar.component';
 import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';

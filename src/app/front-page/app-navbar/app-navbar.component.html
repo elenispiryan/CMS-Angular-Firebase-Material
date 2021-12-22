@@ -2,9 +2,13 @@
     <mat-toolbar-row>
         <button mat-button routerLink="/">Angular CMS</button>
       <span class="example-spacer"></span>
+
+      <div *ngFor="let menus of menusList">
+        <button mat-button routerLink="pages/{{ menus.url }}">{{ menus.title }}</button>
+    </div>
               
-        <button mat-button routerLink="/article">Article Page</button>
-        <button mat-button routerLink="/admin">Admin Page</button>
+        <button mat-button routerLink="article">Article Page</button>
+       
     <div *ngIf="! user">
         <button mat-button (click)="AfService.loginWithGoogle()">Login Page</button>
     </div>
@@ -37,8 +41,3 @@
   
   </mat-toolbar>
 
-
-<div *ngIf="user">
-    <p>Subscriber: {{user.roles?.subscriber ? true:false}} </p>
-    <p>Admin: {{user.roles?.admin ? true:false}} </p>
-</div> 
