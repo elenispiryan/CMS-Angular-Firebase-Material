@@ -4,6 +4,6 @@
     <p>Are your sure?</p>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-raised-button [mat-dialog-close]="true">Yes</button>
-    <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" (click)="confirm()">Yes</button>
+    <button mat-raised-button [mat-dialog-close]="false" (click)="cancel()">Cancel</button>
 </mat-dialog-actions>

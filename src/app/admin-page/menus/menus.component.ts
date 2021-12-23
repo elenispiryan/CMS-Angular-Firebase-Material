@@ -24,9 +24,7 @@ export class MenusComponent implements OnInit {
   dataSource!: MatTableDataSource<Menu>;
   displayedColumns: string[] = ['id', 'title', 'url', 'actions'];
 
-  
- 
-  menuDetails: Menu = {
+    menuDetails: Menu = {
     title: "",
     url: "",
 
@@ -44,12 +42,10 @@ export class MenusComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result === 'true') {
-      
-      console.log('The dialog was closed'+menuId);
-     // this.animal = result;
-     this.deleteMenu(menuId);
-    }});
+      if (result) {
+        this.deleteMenu(menuId)
+      }
+    });
   }
 
 
@@ -61,10 +57,8 @@ export class MenusComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        
-      }
-      console.log('Edit dialog was closed');
-      this.editMenu(menuId, result)
+             }
+          this.editMenu(menuId, result)
  
     });
   }
@@ -81,12 +75,9 @@ export class MenusComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
-addMenu() {
-  this.menus.addMenu(this.menuDetails);
-  //console.log(this.menuDetails)}
-
+  addMenu() {
+    this.menus.addMenu(this.menuDetails);
 }
-
 
   editMenu(menuId: string, menu: Menu) {
     this.menus.updateMenu(menuId, menu);

@@ -13,8 +13,6 @@ export class AppNavbarComponent implements OnInit {
   constructor(public AfService: AfService) { }
 
   ngOnInit(): void {
-    this.AfService.user$.subscribe(user => this.user = user);
-  }
+    this.AfService.user$.subscribe(user => this.user = user);}
   
-
 }
