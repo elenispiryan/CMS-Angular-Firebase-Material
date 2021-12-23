@@ -61,12 +61,10 @@ export class PostsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result === 'true') {
-      
-      console.log('The dialog was closed'+postId);
-     // this.animal = result;
-     this.deletePost(postId);
-    }});
+      if (result) {
+        this.deletePost(postId);
+      }
+    });
   }
 
 
